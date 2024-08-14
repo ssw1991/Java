@@ -4,9 +4,12 @@
  */
 package com.shilo.pluralsight.spring_framework_6_fundementals.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
  *
@@ -14,11 +17,17 @@ import jakarta.persistence.Id;
  */
 
 @Entity
+@Table(name="speakers")
 public class Speaker {
     
     private @Id
-    @GeneratedValue Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    Long id;
+    
+    @Column(nullable=false)
     private String firstName;
+    
+    @Column(nullable=false)
     private String lastName;
 
     public Speaker(){

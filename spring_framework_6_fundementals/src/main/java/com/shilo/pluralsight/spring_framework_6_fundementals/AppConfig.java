@@ -14,14 +14,4 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-        
-    @Bean
-    CommandLineRunner initDatabase(SpeakerRepository repository) {
-
-        return args -> {
-            System.out.println("Preloading " + repository.save(new Speaker("John", "Smith")));
-            System.out.println("Preloading " + repository.save(new Speaker("Jane", "Doe")));
-        };
-    }
-    
 }
