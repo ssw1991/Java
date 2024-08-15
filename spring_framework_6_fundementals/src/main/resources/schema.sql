@@ -8,8 +8,9 @@
  */
 
 
-CREATE TABLE public.speakers (
-    id int NOT NULL,
+CREATE TABLE public.contacts (
+    email character varying(255) NOT NULL,
     first_name character varying(255) NOT NULL,
-    last_name character varying(255) NOT NULL
+    last_name character varying(255) NOT NULL,
+    phone_number character varying(255)
 );
